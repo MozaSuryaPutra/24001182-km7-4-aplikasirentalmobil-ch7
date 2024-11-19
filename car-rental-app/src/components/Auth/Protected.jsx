@@ -13,8 +13,12 @@ const Protected = ({ children, roles }) => {
   }
 
   if (token && user && roles.length > 0) {
+    console.log(user);
     const isCanAccess = roles.includes(user?.role_id);
+    console.log(isCanAccess);
+    console.log(roles);
     if (!isCanAccess) {
+      console.log("rusak");
       navigate({ to: "/" });
       return;
     }

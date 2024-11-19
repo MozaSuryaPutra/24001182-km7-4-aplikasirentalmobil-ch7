@@ -25,11 +25,11 @@ export const Route = createRootRoute({
       location.pathname.startsWith("/admin") && user?.role_id === 1;
 
     // Redirect non-admin users trying to access /admin routes
-    React.useEffect(() => {
-      if (location.pathname.startsWith("/admin") && user?.role_id !== 1) {
-        navigate({ to: "/" }); // Redirect to home or any other appropriate route
-      }
-    }, [location, user, navigate]);
+    // React.useEffect(() => {
+    //   if (location.pathname.startsWith("/admin") && user?.role_id !== 1) {
+    //     navigate({ to: "/" }); // Redirect to home or any other appropriate route
+    //   }
+    // }, [location, user, navigate]);
 
     return (
       <>

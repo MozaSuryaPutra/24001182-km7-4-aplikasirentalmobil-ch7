@@ -17,22 +17,6 @@ function Index() {
   const [isCheckingAuth, setIsCheckingAuth] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
 
-  useEffect(() => {
-    if (!token) {
-      navigate({ to: "/" });
-    } else {
-      setIsCheckingAuth(false);
-    }
-  }, [token, navigate]);
-
-  if (isCheckingAuth || isLoading) {
-    return (
-      <Row className="mt-4">
-        <h1>Loading...</h1>
-      </Row>
-    );
-  }
-
   return (
     <Row className="mt-4">
       <h1>Selamat Datang Di Website Kelompok 4</h1>
