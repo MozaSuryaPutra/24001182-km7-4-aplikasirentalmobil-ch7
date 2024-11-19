@@ -75,7 +75,8 @@ const SearchCard = ({ cars, setCars }) => {
         </CardText>
         <CardText className="mb-2">{cars.carsModels.description}</CardText>
         <CardText>
-          <FaClock className="mb-1 me-1" /> {new Date(cars.availableAt)}
+          <FaClock className="mb-1 me-1" />{" "}
+          {cars.availableAt.toString().substring(0, 10)}
         </CardText>
         <CardText>
           <FaIdCard className="mb-1 me-1" /> {cars.plate}

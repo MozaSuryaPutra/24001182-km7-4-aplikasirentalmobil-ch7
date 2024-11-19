@@ -133,7 +133,10 @@ function CarDetail() {
                       {car?.available.toString().charAt(0).toUpperCase() +
                         car?.available.toString().slice(1)}
                     </li>
-                    <li>Available at :{new Date(car?.availableAt)}</li>
+                    <li>
+                      Available at :
+                      {car?.availableAt.toString().substring(0, 10)}
+                    </li>
                   </ul>
 
                   <span>Include</span>
