@@ -6,7 +6,7 @@ import { useQuery, useMutation } from "@tanstack/react-query";
 import FooterSection from "../../components/FooterSection";
 import { FaCalendar, FaCog, FaUser } from "react-icons/fa";
 import { toast } from "react-toastify";
-import { format } from "date-fns";
+//import { format } from "date-fns";
 
 export const Route = createLazyFileRoute("/cars/$id")({
   component: CarDetail,
