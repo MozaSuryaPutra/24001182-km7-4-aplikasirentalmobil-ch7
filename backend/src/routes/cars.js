@@ -25,7 +25,7 @@ router.get(
   validateGetCarsSearched,
   getCarsSearched
 );
-router.get("/:id", authorization(1, 2), validateGetCarsById, getCarsById);
+router.get("/:id", validateGetCarsById, getCarsById);
 router.post("/", authorization(1), validateCreateCars, createCars);
 router.put("/:id", authorization(1), validateUpdateCars, updateCars);
 router.delete("/:id", authorization(1), validateDeleteCars, deleteCarsById);

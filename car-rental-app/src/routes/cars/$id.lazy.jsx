@@ -134,11 +134,8 @@ function CarDetail() {
                         car?.available.toString().slice(1)}
                     </li>
                     <li>
-                      Available at :{" "}
-                      {format(
-                        new Date(car?.availableAt),
-                        "MMMM dd, yyyy 'at' hh:mm a"
-                      )}
+                      Available At:
+                      {car?.availableAt.toString().substring(0, 10)}
                     </li>
                   </ul>
 
