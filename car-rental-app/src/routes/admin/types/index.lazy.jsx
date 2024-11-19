@@ -31,7 +31,7 @@ function Types() {
 
   useEffect(() => {
     if (isSuccess) {
-      setTypes(data);
+      setTypes(data || []);
     }
   }, [data, isSuccess]);
 

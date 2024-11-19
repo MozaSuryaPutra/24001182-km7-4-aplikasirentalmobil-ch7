@@ -133,7 +133,7 @@ const TypeTable = ({ car_types, setTypes }) => {
 
       // Refresh data after deletion
       const refreshedTypes = await getType();
-      setTypes(refreshedTypes);
+      setTypes(refreshedTypes || []);
     },
     onError: (error) => {
       toast.error(error?.message || "Error deleting type");
