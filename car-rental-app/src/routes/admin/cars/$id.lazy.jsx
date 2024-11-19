@@ -115,9 +115,7 @@ function CarDetail() {
               <Card.Text>Year: {car?.year}</Card.Text>
 
               <Card.Text>Available: {car?.available.toString()}</Card.Text>
-              <Card.Text>
-                AvailableAt: {car?.availableAt.toString().substring(0, 10)}
-              </Card.Text>
+              <Card.Text>AvailableAt: {car?.availableAt}</Card.Text>
               <Card.Text>ID: {car?.id}</Card.Text>
 
               <Card.Text>Model Name: {car?.carsModels?.model_name}</Card.Text>

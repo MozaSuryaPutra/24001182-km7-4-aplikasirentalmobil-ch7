@@ -5,7 +5,7 @@ import Button from "react-bootstrap/Button";
 import { useNavigate } from "@tanstack/react-router";
 import "react-confirm-alert/src/react-confirm-alert.css";
 import { useSelector } from "react-redux";
-//import { format } from "date-fns";
+import { format } from "date-fns";
 import { FaClock, FaCog, FaIdCard, FaUserFriends } from "react-icons/fa";
 
 const CardContainer = styled.div`
@@ -65,35 +65,21 @@ const SearchCard = ({ cars, setCars }) => {
         <CarImage src={cars.image} />
       </ImageContainer>
       <CardBody>
-        <CardTitle>
-          {cars.carsModels.car_types.body_style.charAt(0).toUpperCase() +
-            cars.carsModels.car_types.body_style.slice(1)}
-        </CardTitle>
+        <CardTitle>{cars.carsModels.car_types.body_style.charAt(0).toUpperCase() +
+      cars.carsModels.car_types.body_style.slice(1)}</CardTitle>
 
-        <CardText>
-          <b>Rp. {cars.rentPerDay.toLocaleString("id-ID")}/Hari</b>
-        </CardText>
-        <CardText className="mb-2">{cars.carsModels.description}</CardText>
-        <CardText>
-          <FaClock className="mb-1 me-1" />{" "}
-          {cars.availableAt.toString().substring(0, 10)}
-        </CardText>
-        <CardText>
-          <FaIdCard className="mb-1 me-1" /> {cars.plate}
-        </CardText>
-        <CardText>
-          <FaCog className="mb-1 me-1" /> {cars.carsModels.transmission}
-        </CardText>
-        <CardText>
-          <FaUserFriends className="mb-1 me-1" />{" "}
-          {cars.carsModels.car_types.capacity} Orang
-        </CardText>
+        <CardText><b>Rp. {cars.rentPerDay.toLocaleString("id-ID")}/Hari</b></CardText>
+        <CardText className='mb-2'>{cars.carsModels.description}</CardText>
+        <CardText><FaClock className="mb-1 me-1"/> {format(new Date(cars.availableAt), "MMMM dd, yyyy 'at' hh:mm a")}</CardText>
+        <CardText><FaIdCard className="mb-1 me-1"/> {cars.plate}</CardText>
+        <CardText><FaCog className="mb-1 me-1"/> {cars.carsModels.transmission}</CardText>
+        <CardText><FaUserFriends className="mb-1 me-1"/> {cars.carsModels.car_types.capacity} Orang</CardText>
 
         <Button
           onClick={() => {
             navigate({ to: `/cars/${cars.id}` });
           }}
-          style={{ backgroundColor: "#5CB85F", border: "#5CB85F" }}
+          style={{ backgroundColor: "#5CB85F", border:"#5CB85F" }}
           className="rounded-0 my-3"
         >
           Detail Mobil

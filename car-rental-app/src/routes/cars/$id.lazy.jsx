@@ -6,7 +6,7 @@ import { useQuery, useMutation } from "@tanstack/react-query";
 import FooterSection from "../../components/FooterSection";
 import { FaCalendar, FaCog, FaUser } from "react-icons/fa";
 import { toast } from "react-toastify";
-//import { format } from "date-fns";
+import { format } from "date-fns";
 
 export const Route = createLazyFileRoute("/cars/$id")({
   component: CarDetail,
@@ -134,8 +134,11 @@ function CarDetail() {
                         car?.available.toString().slice(1)}
                     </li>
                     <li>
-                      Available at :
-                      {car?.availableAt.toString().substring(0, 10)}
+                      Available at :{" "}
+                      {format(
+                        new Date(car?.availableAt),
+                        "MMMM dd, yyyy 'at' hh:mm a"
+                      )}
                     </li>
                   </ul>
 

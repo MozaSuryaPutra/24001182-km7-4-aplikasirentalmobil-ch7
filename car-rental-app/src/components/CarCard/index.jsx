@@ -66,9 +66,7 @@ const CarCard = ({ cars, setCars }) => {
         <CardTitle>{cars.carsModels.model_name}</CardTitle>
 
         <CardText>RP {cars.rentPerDay}/Hari</CardText>
-        <CardText>
-          Available At: {cars.availableAt.toString().substring(0, 10)}
-        </CardText>
+        <CardText>Available At: {cars.availableAt}</CardText>
         <CardText>Year: {cars.year}</CardText>
         <CardText>Plate: {cars.plate}</CardText>
 
